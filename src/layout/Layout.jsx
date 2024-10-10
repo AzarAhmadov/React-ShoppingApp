@@ -5,7 +5,7 @@ import Header from "../common/Header/Header";
 const Sidebar = lazy(() => import("../components/Sidebar/Sidebar"));
 import Footer from "../common/Footer/Footer";
 import { ToastContainer } from "react-toastify";
-import Middleware from "../middleware/MiddleWare";
+import Middleware from "../middleware/Middleware";
 
 const Layout = () => {
   return (
