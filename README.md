@@ -26,7 +26,7 @@ This is a sales website built with **React** using the [FakeStore API](https://f
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/AzarAhmadov/React-ShoppingApp
+   git clone https://github.com/AzarAhmadov/React-ShoppingApp.git
 
 ## Screens
 <img width="1507" alt="Screenshot 2024-10-10 at 19 52 03" src="https://github.com/user-attachments/assets/7823434f-1f92-4b26-9b15-de18d0f2b9a9">
