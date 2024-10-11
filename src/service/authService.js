@@ -8,8 +8,7 @@ export const getLogin = async (formData, setToken, setError) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                username: formData.username.trim(),
-                password: formData.password.trim(),
+                ...formData
             }),
         });
 
