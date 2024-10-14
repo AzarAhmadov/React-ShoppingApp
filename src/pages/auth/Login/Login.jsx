@@ -23,7 +23,7 @@ const Login = () => {
 
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value.trim(),
     });
   };
 
@@ -51,6 +51,7 @@ const Login = () => {
               name="username"
               placeholder="Enter a username"
               type="text"
+              info="username: mor_2314"
             />
           </FormGroup>
 
@@ -61,6 +62,7 @@ const Login = () => {
               name="password"
               placeholder="Enter a password"
               type="password"
+              info="password: 83r5^_"
             />
           </FormGroup>
           {error && (
