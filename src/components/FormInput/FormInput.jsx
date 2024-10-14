@@ -16,7 +16,7 @@ const FormInput = ({
         name={name}
         type={type}
         placeholder={placeholder}
-        className="w-full px-3 py-2 mb-1 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+        className="w-full px-3 py-2 mb-1 border rounded-lg placeholder:text-[13px] focus:outline-none focus:ring focus:border-blue-300"
       />
 
       {info && <small>{info}</small>}
