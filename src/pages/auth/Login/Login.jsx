@@ -3,6 +3,8 @@ import { getLogin } from "../../../service/authService";
 import { getCartContext } from "../../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/ui/Button";
+import FormGroup from "../../../components/FormGroup/FormGroup";
+import FormInput from "../../../components/FormInput/FormInput";
 
 const Login = () => {
   const { token, setToken } = getCartContext();
@@ -12,6 +14,9 @@ const Login = () => {
     username: "",
     password: "",
   });
+
+  const isFormEmpty =
+    formData.username.trim() === "" || formData.password.trim() === "";
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -39,52 +44,33 @@ const Login = () => {
         <h2 className="mb-6 text-2xl font-bold text-center">Login</h2>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              htmlFor="username"
-            >
-              Username
-            </label>
-            <input
-              onChange={handleInputChange}
+          <FormGroup label="Username">
+            <FormInput
+              handleInputChange={handleInputChange}
               value={formData.username}
-              id="username"
               name="username"
+              placeholder="Enter a username"
               type="text"
-              placeholder="Enter your username"
-              className="w-full px-3 py-2 mb-1 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
             />
-            <small>Username : mor_2314</small>
-          </div>
+          </FormGroup>
 
-          <div className="mb-4">
-            <label
-              className="block mb-2 text-sm font-bold text-gray-700"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              onChange={handleInputChange}
+          <FormGroup label="Password">
+            <FormInput
+              handleInputChange={handleInputChange}
               value={formData.password}
               name="password"
-              id="password"
+              placeholder="Enter a password"
               type="password"
-              placeholder="Enter your password"
-              className="w-full px-3 py-2 mb-1 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
             />
-            <small>Password : 83r5^_</small>
-          </div>
-
+          </FormGroup>
           {error && (
-            <p className="mb-3 text-sm text-center text-red-500">
-              username or password in incorrect
-            </p>
+            <span className="flex justify-center mb-4 text-red-600">
+              Username or password incorrect
+            </span>
           )}
-          <div className="flex items-center justify-between">
-            <Button type="submit">Login</Button>
-          </div>
+          <Button disabled={isFormEmpty} type="submit">
+            Login
+          </Button>
         </form>
       </div>
     </div>
